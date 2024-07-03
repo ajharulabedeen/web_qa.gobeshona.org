@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.hendisantika.springadm</groupId>
-    <artifactId>spring-adminlte2</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <groupId>org.gobeshona.qa_web</groupId>
+    <artifactId>gobeshona-qa_web</artifactId>
+    <version>v99.0.1</version>
     <packaging>jar</packaging>
 
-    <name>Spring AdminLte2</name>
-    <description>Spring boot AdminLTE</description>
+    <name>Gobeshona QA Web</name>
+    <description>Gobeshona QA Web</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
