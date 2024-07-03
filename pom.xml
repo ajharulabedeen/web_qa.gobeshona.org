@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.gobeshona.qa_web</groupId>
-    <artifactId>gobeshona-qa_web</artifactId>
-    <version>v99.0.1</version>
+    <groupId>com.hendisantika.springadm</groupId>
+    <artifactId>spring-adminlte2</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Gobeshona QA Web</name>
-    <description>Gobeshona QA Web</description>
+    <name>Spring AdminLte2</name>
+    <description>Spring boot AdminLTE</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -21,7 +21,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>17</java.version>
-<!--        <testcontainers.version>1.19.8</testcontainers.version>-->
+        <testcontainers.version>1.19.8</testcontainers.version>
     </properties>
 
     <dependencies>
@@ -110,15 +110,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version> <!-- Update to a version that supports Java 17 -->
-                <configuration>
-                    <source>17</source>
-                    <target>17</target>
-                </configuration>
             </plugin>
         </plugins>
     </build>
