@@ -1,7 +1,7 @@
-package com.example.registrationlogindemo.service;
+package org.gobeshona.qa.service;
 
-import com.example.registrationlogindemo.dto.UserDto;
-import com.example.registrationlogindemo.entity.User;
+import org.gobeshona.qa.dto.UserDto;
+import org.gobeshona.qa.entity.User;
 
 import java.util.List;
 

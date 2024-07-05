@@ -1,13 +1,13 @@
-package com.example.registrationlogindemo;
+package org.gobeshona.qa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RegistrationLoginDemoApplication {
+public class GobeshonaQA {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RegistrationLoginDemoApplication.class, args);
+		SpringApplication.run(GobeshonaQA.class, args);
 	}
 
 }

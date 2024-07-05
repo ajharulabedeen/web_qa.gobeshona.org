@@ -1,4 +1,4 @@
-package com.example.registrationlogindemo.entity;
+package org.gobeshona.qa.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

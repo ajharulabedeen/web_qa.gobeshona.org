@@ -1,8 +1,8 @@
-package com.example.registrationlogindemo.security;
+package org.gobeshona.qa.security;
 
-import com.example.registrationlogindemo.entity.Role;
-import com.example.registrationlogindemo.entity.User;
-import com.example.registrationlogindemo.repository.UserRepository;
+import org.gobeshona.qa.entity.Role;
+import org.gobeshona.qa.entity.User;
+import org.gobeshona.qa.repository.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

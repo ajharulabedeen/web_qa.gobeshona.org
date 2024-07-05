@@ -1,11 +1,11 @@
-package com.example.registrationlogindemo.service.impl;
+package org.gobeshona.qa.service.impl;
 
-import com.example.registrationlogindemo.dto.UserDto;
-import com.example.registrationlogindemo.entity.Role;
-import com.example.registrationlogindemo.entity.User;
-import com.example.registrationlogindemo.repository.RoleRepository;
-import com.example.registrationlogindemo.repository.UserRepository;
-import com.example.registrationlogindemo.service.UserService;
+import org.gobeshona.qa.dto.UserDto;
+import org.gobeshona.qa.entity.Role;
+import org.gobeshona.qa.entity.User;
+import org.gobeshona.qa.repository.RoleRepository;
+import org.gobeshona.qa.repository.UserRepository;
+import org.gobeshona.qa.service.UserService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

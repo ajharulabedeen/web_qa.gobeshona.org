@@ -1,4 +1,4 @@
-package com.example.registrationlogindemo.dto;
+package org.gobeshona.qa.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;

@@ -1,6 +1,6 @@
-package com.example.registrationlogindemo.repository;
+package org.gobeshona.qa.repository;
 
-import com.example.registrationlogindemo.entity.User;
+import org.gobeshona.qa.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {

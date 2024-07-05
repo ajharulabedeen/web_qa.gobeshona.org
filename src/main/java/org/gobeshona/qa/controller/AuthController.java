@@ -1,8 +1,8 @@
-package com.example.registrationlogindemo.controller;
+package org.gobeshona.qa.controller;
 
-import com.example.registrationlogindemo.dto.UserDto;
-import com.example.registrationlogindemo.entity.User;
-import com.example.registrationlogindemo.service.UserService;
+import org.gobeshona.qa.dto.UserDto;
+import org.gobeshona.qa.entity.User;
+import org.gobeshona.qa.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,6 +38,18 @@ public class AuthController {
         UserDto user = new UserDto();
         model.addAttribute("user", user);
         return "register";
+    }
+    @GetMapping("register/new")
+    public String showRegistrationForm_(Model model){
+        UserDto user = new UserDto();
+        model.addAttribute("user", user);
+        return "register_";
+    }
+    @GetMapping("public/newregister")
+    public String showPublicRegistration(Model model){
+        UserDto user = new UserDto();
+        model.addAttribute("user", user);
+        return "register_public";
     }
 
     // handler method to handle register user form submit request
