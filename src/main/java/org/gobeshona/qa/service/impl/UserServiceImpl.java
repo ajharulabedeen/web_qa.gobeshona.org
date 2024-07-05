@@ -59,9 +59,11 @@ public class UserServiceImpl implements UserService {
 
     private UserDto convertEntityToDto(User user){
         UserDto userDto = new UserDto();
-        String[] name = user.getName().split(" ");
-        userDto.setFirstName(name[0]);
-        userDto.setLastName(name[1]);
+//        String[] name = user.getName().split(" ");
+//        userDto.setFirstName(name[0]);
+//        userDto.setLastName(name[1]);
+        userDto.setFirstName(user.getName());
+        userDto.setLastName(user.getName());
         userDto.setEmail(user.getEmail());
         return userDto;
     }
