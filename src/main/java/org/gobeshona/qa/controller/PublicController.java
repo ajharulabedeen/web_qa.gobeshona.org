@@ -33,7 +33,7 @@ public class PublicController {
     @GetMapping("token")
     @ResponseBody
     public String token(HttpSession session) {
-        String url = "http://localhost:8080/api/auth/signin";
+        String url = "http://localhost:8082/api/auth/signin";
         LoginRequest request = new LoginRequest();
         request.setUsername("khan1");
         request.setPassword("123456");
