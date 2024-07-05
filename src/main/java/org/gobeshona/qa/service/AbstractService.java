@@ -1,7 +1,7 @@
-package com.hendisantika.adminlte.service;
+package org.gobeshona.qa.service;
 
 
-import com.hendisantika.adminlte.model.AbstractModel;
+import org.gobeshona.qa.model.AbstractModel;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

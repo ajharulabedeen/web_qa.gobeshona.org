@@ -1,4 +1,4 @@
-package com.hendisantika.adminlte.model;
+package org.gobeshona.qa.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

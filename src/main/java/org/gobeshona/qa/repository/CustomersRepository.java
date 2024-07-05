@@ -1,6 +1,6 @@
-package com.hendisantika.adminlte.repository;
+package org.gobeshona.qa.repository;
 
-import com.hendisantika.adminlte.model.Customers;
+import org.gobeshona.qa.model.Customers;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

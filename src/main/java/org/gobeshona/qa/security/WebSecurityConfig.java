@@ -1,4 +1,4 @@
-package com.hendisantika.adminlte.security;
+package org.gobeshona.qa.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -29,18 +29,21 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain configure(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((req) -> req
-                                .requestMatchers("/bower_components/**", "/dist/**", "/plugins/**").permitAll()
-                .anyRequest().authenticated()
+                        .requestMatchers("/bower_components/**", "/dist/**", "/plugins/**", "/public/**").permitAll() // Use /** to match any requests starting with /public
+//                        .requestMatchers("/**").permitAll() // Use /** to match any requests starting with /public
+                        .anyRequest().authenticated()
                 )
                 .formLogin((formLogin) -> formLogin
-                .failureUrl("/login?error")
-                .loginPage("/login")
-                .defaultSuccessUrl("/")
-                        .permitAll())
+                        .failureUrl("/login?error")
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/")
+                        .permitAll()
+                )
                 .logout(logout -> logout
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/login")
-                        .permitAll());
+                        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                        .logoutSuccessUrl("/login")
+                        .permitAll()
+                );
         return http.build();
     }
 

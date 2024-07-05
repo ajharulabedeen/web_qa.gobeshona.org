@@ -1,7 +1,7 @@
-package com.hendisantika.adminlte.controller;
+package org.gobeshona.qa.controller;
 
-import com.hendisantika.adminlte.model.Customers;
-import com.hendisantika.adminlte.service.CustomersService;
+import org.gobeshona.qa.model.Customers;
+import org.gobeshona.qa.service.CustomersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;

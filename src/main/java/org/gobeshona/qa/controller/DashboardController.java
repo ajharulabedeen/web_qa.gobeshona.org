@@ -1,4 +1,4 @@
-package com.hendisantika.adminlte.controller;
+package org.gobeshona.qa.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,5 +10,4 @@ public class DashboardController {
     public String index() {
         return "dashboard/index";
     }
-
 }

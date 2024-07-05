@@ -1,4 +1,4 @@
-package com.hendisantika.adminlte.model;
+package org.gobeshona.qa.model;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

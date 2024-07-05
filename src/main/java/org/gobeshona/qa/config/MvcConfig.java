@@ -1,4 +1,4 @@
-package com.hendisantika.adminlte.config;
+package org.gobeshona.qa.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
