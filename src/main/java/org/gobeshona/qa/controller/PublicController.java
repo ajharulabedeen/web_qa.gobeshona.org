@@ -23,6 +23,11 @@ public class PublicController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @GetMapping("/")
+    public String home() {
+        return "welcome";
+    }
+
     @GetMapping("all")
     @ResponseBody
     public String all() {
