@@ -24,7 +24,7 @@ public class SignupReq {
 //    @NotNull(message = "Country code is required")
     private String countryMobile;
 
-//    @NotEmpty(message = "Username is required")
+    @NotEmpty(message = "Username is required")
     private String username;
 
     @NotNull(message = "Username type is required")
