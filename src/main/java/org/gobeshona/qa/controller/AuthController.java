@@ -1,5 +1,6 @@
 package org.gobeshona.qa.controller;
 
+import org.gobeshona.qa.dto.SignupReq;
 import org.gobeshona.qa.dto.UserDto;
 import org.gobeshona.qa.entity.User;
 import org.gobeshona.qa.service.UserService;
@@ -52,6 +53,15 @@ public class AuthController {
         model.addAttribute("user", user);
         return "register_public";
     }
+
+    @GetMapping("register/singup_me")
+    public String singUp(Model model){
+        SignupReq user = new SignupReq();
+        model.addAttribute("signupRequest", user);
+        return "signup";
+    }
+
+
 
     // handler method to handle register user form submit request
     @PostMapping("/register/save")
