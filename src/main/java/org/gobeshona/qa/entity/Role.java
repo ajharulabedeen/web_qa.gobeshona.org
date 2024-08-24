@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="roles")
+@Table(name="roles_dum")
 public class Role
 {
     @Id

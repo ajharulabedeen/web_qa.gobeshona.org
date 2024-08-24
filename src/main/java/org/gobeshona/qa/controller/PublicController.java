@@ -1,20 +1,13 @@
 package org.gobeshona.qa.controller;
 
 import jakarta.servlet.http.HttpSession;
-import jakarta.validation.Valid;
 import org.gobeshona.qa.dto.LoginRequest;
 import org.gobeshona.qa.dto.LoginResponse;
-import org.gobeshona.qa.dto.UserDto;
-import org.gobeshona.qa.entity.User;
-import org.gobeshona.qa.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.List;
 
 @Controller
 @RequestMapping("public")
