@@ -3,11 +3,13 @@ package org.gobeshona.qa.security;
 import org.gobeshona.qa.entity.Role;
 import org.gobeshona.qa.entity.User;
 //import org.gobeshona.qa.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -24,6 +26,10 @@ public class CustomUserDetailsService implements UserDetailsService {
 //    public CustomUserDetailsService(UserRepository userRepository) {
 //        this.userRepository = userRepository;
 //    }
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
@@ -45,7 +51,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         return mapRoles;
     }
 
-    public static User getDefaultUser() {
+    public User getDefaultUser() {
         // Creating default roles
         Role defaultRole = new Role(1L, "USER", null);
         List<Role> defaultRoles = new ArrayList<>(Arrays.asList(defaultRole));
@@ -53,10 +59,10 @@ public class CustomUserDetailsService implements UserDetailsService {
         // Returning a default User object
         return new User(
                 0L,                      // Default id
-                "Default Name",          // Default name
-                "defaultuser",           // Default username
+                "Admin Name",          // Default name
+                "admin",           // Default username
                 "default@example.com",   // Default email
-                "defaultpassword",       // Default password
+                passwordEncoder.encode("admin") ,       // Default password
                 defaultRoles             // Default roles
         );
     }
