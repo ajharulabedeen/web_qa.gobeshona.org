@@ -2,7 +2,7 @@ package org.gobeshona.qa.security;
 
 import org.gobeshona.qa.entity.Role;
 import org.gobeshona.qa.entity.User;
-import org.gobeshona.qa.repository.UserRepository;
+//import org.gobeshona.qa.repository.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,21 +10,24 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private UserRepository userRepository;
+//    private UserRepository userRepository;
 
-    public CustomUserDetailsService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+//    public CustomUserDetailsService(UserRepository userRepository) {
+//        this.userRepository = userRepository;
+//    }
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        User user = userRepository.findByEmail(email);
+        User user = getDefaultUser();
 
         if (user != null) {
             return new org.springframework.security.core.userdetails.User(user.getEmail(),
@@ -41,5 +44,22 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .collect(Collectors.toList());
         return mapRoles;
     }
+
+    public static User getDefaultUser() {
+        // Creating default roles
+        Role defaultRole = new Role(1L, "USER", null);
+        List<Role> defaultRoles = new ArrayList<>(Arrays.asList(defaultRole));
+
+        // Returning a default User object
+        return new User(
+                0L,                      // Default id
+                "Default Name",          // Default name
+                "defaultuser",           // Default username
+                "default@example.com",   // Default email
+                "defaultpassword",       // Default password
+                defaultRoles             // Default roles
+        );
+    }
+
 }
 
