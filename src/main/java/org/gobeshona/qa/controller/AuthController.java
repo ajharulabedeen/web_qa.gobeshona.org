@@ -29,10 +29,6 @@ public class AuthController {
     }
 
 
-    @GetMapping("/login")
-    public String loginForm() {
-        return "login";
-    }
 
     // handler method to handle user registration request
     @GetMapping("register")

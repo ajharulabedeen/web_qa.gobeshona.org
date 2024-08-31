@@ -16,10 +16,10 @@ public class PublicController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @GetMapping("/")
-    public String home() {
-        return "welcome";
-    }
+//    @GetMapping("/")
+//    public String home() {
+//        return "welcome";
+//    }
 
     @GetMapping("all")
     @ResponseBody
@@ -27,6 +27,13 @@ public class PublicController {
         String apiUrl = "http://localhost:8080/api/test/all";
         return restTemplate.getForObject(apiUrl, String.class);
     }
+
+//    @GetMapping("/login")
+//    public String loginForm() {
+//        return "login";
+//    }
+
+
 
     @GetMapping("token")
     @ResponseBody
