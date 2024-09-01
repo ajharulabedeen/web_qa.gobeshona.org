@@ -26,10 +26,16 @@ public class AuthController {
     }
 
 
-    @GetMapping("/login")
-    public String loginForm() {
-        return "login";
+//    @GetMapping("/login")
+//    public String loginForm() {
+//        return "login";
+//    }
+
+    @GetMapping("/login_lte")
+    public String loginFormLTE() {
+        return "login_lte";
     }
+
     @PostMapping("/login")
     public String postLogin(
             @RequestParam("username") String username,
