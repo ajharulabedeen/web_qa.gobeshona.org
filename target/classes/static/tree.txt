@@ -1,0 +1,159 @@
+Folder PATH listing for volume New Volume
+Volume serial number is 7ADF-47D3
+E:.
+¦   favicon.ico
+¦   favicon.png
+¦   tree.txt
+¦   
++---css
+¦   ¦   favicon.ico
+¦   ¦   
+¦   +---adminlte
+¦           adminlte.min.css
+¦           
++---img
+¦   ¦   AdminLTELogo.png
+¦   ¦   avatar.png
+¦   ¦   avatar2.png
+¦   ¦   avatar3.png
+¦   ¦   avatar4.png
+¦   ¦   avatar5.png
+¦   ¦   boxed-bg.jpg
+¦   ¦   boxed-bg.png
+¦   ¦   default-150x150.png
+¦   ¦   icons.png
+¦   ¦   photo1.png
+¦   ¦   photo2.png
+¦   ¦   photo3.jpg
+¦   ¦   photo4.jpg
+¦   ¦   prod-1.jpg
+¦   ¦   prod-2.jpg
+¦   ¦   prod-3.jpg
+¦   ¦   prod-4.jpg
+¦   ¦   prod-5.jpg
+¦   ¦   user1-128x128.jpg
+¦   ¦   user2-160x160.jpg
+¦   ¦   user3-128x128.jpg
+¦   ¦   user4-128x128.jpg
+¦   ¦   user5-128x128.jpg
+¦   ¦   user6-128x128.jpg
+¦   ¦   user7-128x128.jpg
+¦   ¦   user8-128x128.jpg
+¦   ¦   
+¦   +---credit
+¦           american-express.png
+¦           cirrus.png
+¦           mastercard.png
+¦           paypal.png
+¦           paypal2.png
+¦           visa.png
+¦           
++---js
+    ¦   favicon.ico
+    ¦   
+    +---adminlte
+    ¦       adminlte.js
+    ¦       dashboard.js
+    ¦       dashboard2.js
+    ¦       dashboard3.js
+    ¦       demo.js
+    ¦       
+    +---plugins
+        ¦   favicon.ico
+        ¦   
+        +---bootstrap
+        ¦       bootstrap.bundle.min.js
+        ¦       
+        +---chart.js
+        ¦       Chart.min.js
+        ¦       
+        +---daterangepicker
+        ¦       daterangepicker.css
+        ¦       daterangepicker.js
+        ¦       
+        +---fontawesome-free
+        ¦   ¦   all.min.css
+        ¦   ¦   
+        ¦   +---webfonts
+        ¦           fa-brands-400.eot
+        ¦           fa-brands-400.svg
+        ¦           fa-brands-400.ttf
+        ¦           fa-brands-400.woff
+        ¦           fa-brands-400.woff2
+        ¦           fa-regular-400.eot
+        ¦           fa-regular-400.svg
+        ¦           fa-regular-400.ttf
+        ¦           fa-regular-400.woff
+        ¦           fa-regular-400.woff2
+        ¦           fa-solid-900.eot
+        ¦           fa-solid-900.svg
+        ¦           fa-solid-900.ttf
+        ¦           fa-solid-900.woff
+        ¦           fa-solid-900.woff2
+        ¦           
+        +---icheck-bootstrap
+        ¦       icheck-bootstrap.min.css
+        ¦       
+        +---jquery
+        ¦       jquery.min.js
+        ¦       
+        +---jquery-knob
+        ¦       jquery.knob.min.js
+        ¦       
+        +---jquery-ui
+        ¦       jquery-ui.min.js
+        ¦       
+        +---jqvmap
+        ¦   ¦   jquery.vmap.min.js
+        ¦   ¦   jqvmap.min.css
+        ¦   ¦   
+        ¦   +---maps
+        ¦           jquery.vmap.usa.js
+        ¦           
+        +---moment
+        ¦       moment.min.js
+        ¦       
+        +---overlayScrollbars
+        ¦   +---css
+        ¦   ¦       OverlayScrollbars.css
+        ¦   ¦       OverlayScrollbars.min.css
+        ¦   ¦       
+        ¦   +---js
+        ¦           jquery.overlayScrollbars.js
+        ¦           jquery.overlayScrollbars.min.js
+        ¦           OverlayScrollbars.js
+        ¦           OverlayScrollbars.min.js
+        ¦           
+        +---sparklines
+        ¦       sparkline.js
+        ¦       
+        +---summernote
+        ¦       summernote-bs4.css
+        ¦       summernote-bs4.min.js
+        ¦       
+        +---tempusdominus-bootstrap-4
+        ¦   +---css
+        ¦   ¦       tempusdominus-bootstrap-4.css
+        ¦   ¦       tempusdominus-bootstrap-4.min.css
+        ¦   ¦       
+        ¦   +---js
+        ¦           tempusdominus-bootstrap-4.js
+        ¦           tempusdominus-bootstrap-4.min.js
+        ¦           
+        +---webfonts
+                fa-brands-400.eot
+                fa-brands-400.svg
+                fa-brands-400.ttf
+                fa-brands-400.woff
+                fa-brands-400.woff2
+                fa-regular-400.eot
+                fa-regular-400.svg
+                fa-regular-400.ttf
+                fa-regular-400.woff
+                fa-regular-400.woff2
+                fa-solid-900.eot
+                fa-solid-900.svg
+                fa-solid-900.ttf
+                fa-solid-900.woff
+                fa-solid-900.woff2
+                
