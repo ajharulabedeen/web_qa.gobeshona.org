@@ -1,28 +1,15 @@
 package org.gobeshona.qa.entity;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
+import lombok.*;
 
 import java.util.List;
-
-@Setter
-@Getter
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
-@Entity
-@Table(name="roles_dum")
+@NoArgsConstructor
 public class Role
 {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(nullable=false, unique=true)
     private String name;
-
-    @ManyToMany(mappedBy="roles")
     private List<User> users;
 }
