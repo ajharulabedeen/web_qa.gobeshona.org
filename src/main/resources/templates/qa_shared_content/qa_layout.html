@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.utraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iQA</title>
+
+    <!-- Local CSS and JS files (adjust the paths according to your project structure) -->
+    <style th:replace="~{/shared/style}"></style>
+
+    <style>
+        .navbar-nav .nav-link {
+            color: #f0f0f0; /* dark white color */
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffffff; /* pure white color on hover */
+        }
+        .nav-item .nav-link.sign-up:hover {
+            color: yellow ;
+            font-size: 125% !important;
+        }
+        .nav-item .nav-link.login:hover {
+            color: white ;
+            font-size: 125% !important;
+        }
+        .nav-item .nav-link.highlight:hover {
+            color: white ;
+            font-size: 125% !important;
+        }
+        .navbar-brand.iqa:hover {
+            color: white ;
+            font-size: 225% !important;
+        }
+    </style>
+
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand iqa" href="/" style="font-size: 1rem; color: cyan;">iQA</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link highlight" href="#">About Us <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link highlight" href="#">Questions</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link highlight" href="#">Scholars</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link highlight" href="#">Statistics</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link highlight" href="#">Contact Us</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link sign-up" th:href="@{/public/signup}"><i class="fas fa-user"></i> Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link login" th:href="@{/login_lte}"><i class="fas fa-sign-in-alt"></i> Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Content Section -->
+<div class="container" layout:fragment="content"></div>
+
+<!-- Scripts -->
+<div th:replace="~{/shared/script}"></div>
+
+</body>
+</html>
