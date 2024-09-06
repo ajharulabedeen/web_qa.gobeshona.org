@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html layout:decorate="~{qa_shared_content/qa_layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Signup Form</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -29,10 +32,15 @@
     .is-invalid + .invalid-feedback {
       display: block;
     }
+
+    .content-container {
+      padding-top: 75px; /* Adjust this value based on your navbar height */
+    }
   </style>
 </head>
 <body>
-<div class="container">
+
+<div class="container content-container " layout:fragment="content">
   <div class="form-container">
     <h2 class="text-center">iQA Signup</h2>
     <form th:action="@{/public/signup}" th:object="${signupReq}" method="post" id="signupForm">
@@ -90,9 +98,7 @@
     </form>
   </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('signupForm');
@@ -169,5 +175,7 @@
   });
 
 </script>
+
+
 </body>
 </html>
