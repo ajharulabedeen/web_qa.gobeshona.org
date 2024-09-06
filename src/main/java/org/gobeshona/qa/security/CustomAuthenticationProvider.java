@@ -1,6 +1,7 @@
 package org.gobeshona.qa.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -20,6 +21,9 @@ import java.util.Map;
 @Component
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
+    @Value("${api.qa.base-url}")
+    private String baseUrl;
+
     @Autowired
     private RestTemplate restTemplate;
 
@@ -34,7 +38,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         // Prepare request to external API
         try {
             Map<String, String> request = Map.of("username", username, "password", password);
-            Map<String, Object> response = restTemplate.postForObject("http://localhost:8082/api/auth/web-signin", request, Map.class);
+            Map<String, Object> response = restTemplate.postForObject(baseUrl+"/api/auth/web-signin", request, Map.class);
 
             if (response != null && response.containsKey("accessToken")) {
                 // Verify received credentials
