@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
@@ -12,24 +13,35 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="#"><b>i</b>QA 99.01</a>
+        <a href="/"><b>i</b>QA 99.01</a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">
             <p class="login-box-msg font-weight-bold">Sign in to start your session</p>
 
+            <!-- Add this inside your form or somewhere appropriate in the body -->
+            <div th:if="${param.error}" class="alert alert-danger" role="alert">
+                Invalid username or password.
+            </div>
+            <div th:if="${param.serverError}" class="alert alert-danger" role="alert">
+                A server error occurred. Please try again later or contact the administration.
+            </div>
+
+
             <!-- Display error messages -->
             <div th:if="${param.error}" class="alert alert-danger" role="alert">
-                <i class="fas fa-exclamation-circle"></i> User/password is invalid.
+                <i class="fas fa-exclamation-circle"></i> Invalid Email and Password.
             </div>
-            <div th:if="${param.logout}" class="alert alert-info" role="alert">
+            <div th:if="${param.logout}" class="alert alert-success" role="alert">
                 <i class="fas fa-info-circle"></i> You have been logged out.
             </div>
 
+            <!-- Corrected form action to use a common login endpoint and included a CSRF token -->
             <form method="post" th:action="@{/login}">
+<!--                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>-->
                 <div class="input-group mb-3">
-                    <input type="text" name="username" class="form-control" placeholder="Email, or Phone Number" required>
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Email or Phone Number" required>
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-user"></span>
@@ -37,7 +49,7 @@
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>

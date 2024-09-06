@@ -44,7 +44,7 @@ public class SpringSecurity {
                         .permitAll()
                 )
                 .logout(logout -> logout
-                        .logoutUrl("/perform_logout")  // Specify the URL to trigger logout
+                        .logoutUrl("/logout")  // Specify the URL to trigger logout
                         .logoutSuccessUrl("/login")  // URL to redirect to after successful logout
                         .invalidateHttpSession(true)  // Invalidate the session
                         .deleteCookies("JSESSIONID")  // Delete cookies
