@@ -21,6 +21,11 @@ public class PublicController {
         return "welcome";
     }
 
+    @GetMapping("/forgot-password")
+    public String forgotPassword() {
+        return "forgot-password";
+    }
+
     @GetMapping("all")
     @ResponseBody
     public String all() {

@@ -2,54 +2,42 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <title>Admin LTE 3 | Log in</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>iQA | Log in</title>
     <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" th:href="@{~/webjars/AdminLTE/3.2.0/plugins/fontawesome-free/css/all.min.css}"
-          type="text/css">
-    <!-- Ionicons -->
-    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
-    <!-- icheck bootstrap -->
-    <link rel="stylesheet" th:href="@{~/webjars/AdminLTE/3.2.0/plugins/icheck-bootstrap/icheck-bootstrap.min.css}"
-          type="text/css">
-    <!-- Theme style -->
-    <link rel="stylesheet" th:href="@{~/webjars/AdminLTE/3.2.0/dist/css/adminlte.min.css}" type="text/css">
-    <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"
-          type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- AdminLTE 3 -->
     <style th:replace="~{/shared/style}"></style>
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="../../index2.html"><b>Admin</b>LTE 3</a>
+        <a href="#"><b>i</b>QA 99.01</a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">
-            <p class="login-box-msg" th:if="${param.error}">
-                User/password is invalid.
-            </p>
-            <p class="login-box-msg" th:if="${param.logout}">
-                You have been logged out.
-            </p>
+            <p class="login-box-msg font-weight-bold">Sign in to start your session</p>
 
-            <p class="login-box-msg">Sign in to start your session</p>
+            <!-- Display error messages -->
+            <div th:if="${param.error}" class="alert alert-danger" role="alert">
+                <i class="fas fa-exclamation-circle"></i> User/password is invalid.
+            </div>
+            <div th:if="${param.logout}" class="alert alert-info" role="alert">
+                <i class="fas fa-info-circle"></i> You have been logged out.
+            </div>
 
-            <form method="post" th:action="@{~/login}">
+            <form method="post" th:action="@{/login}">
                 <div class="input-group mb-3">
-                    <input class="form-control" name="username" placeholder="username" type="text">
+                    <input type="text" name="username" class="form-control" placeholder="Email, or Phone Number" required>
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-envelope"></span>
+                            <span class="fas fa-user"></span>
                         </div>
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <input class="form-control" name="password" placeholder="Password" type="password">
+                    <input type="password" name="password" class="form-control" placeholder="Password" required>
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
@@ -57,46 +45,35 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-8">
-                        <div class="icheck-primary">
-                            <input id="remember" type="checkbox">
-                            <label for="remember">
-                                Remember Me
-                            </label>
-                        </div>
-                    </div>
                     <!-- /.col -->
                     <div class="col-4">
-                        <button class="btn btn-primary btn-block" type="submit">Sign In</button>
+                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                     </div>
                     <!-- /.col -->
                 </div>
             </form>
 
-            <div class="social-auth-links text-center mb-3">
-                <p>- OR -</p>
-                <a class="btn btn-block btn-primary" href="#">
-                    <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-                </a>
-                <a class="btn btn-block btn-danger" href="#">
-                    <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-                </a>
+            <!-- Forgot password and Register links -->
+            <div class="mt-3">
+                <p class="mb-1">
+                    <a class="text-decoration-none text-primary" th:href="@{/public/forgot-password}">
+                        <i class="fas fa-key mr-2"></i> Forgot Password?
+                    </a>
+                </p>
+                <p class="mb-0">
+                    <a class="text-decoration-none text-success" th:href="@{/public/signup}">
+                        <i class="fas fa-user-plus mr-2"></i> Register a new membership
+                    </a>
+                </p>
             </div>
-            <!-- /.social-auth-links -->
 
-            <p class="mb-1">
-                <a href="forgot-password.html">I forgot my password</a>
-            </p>
-            <p class="mb-0">
-                <a class="text-center" href="/register">Register a new membership</a>
-            </p>
         </div>
         <!-- /.login-card-body -->
     </div>
 </div>
 <!-- /.login-box -->
 
+<!-- Required Scripts -->
 <div th:replace="~{/shared/script}"></div>
-
 </body>
 </html>

@@ -40,7 +40,7 @@ public class SpringSecurity {
                 .formLogin(form -> form
                         .loginPage("/login_lte")
                         .loginProcessingUrl("/login")
-                        .defaultSuccessUrl("/dash", true)
+                        .defaultSuccessUrl("/dashboard", true)
                         .permitAll()
                 )
                 .logout(logout -> logout

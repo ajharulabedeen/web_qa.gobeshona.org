@@ -31,10 +31,16 @@ public class AuthController {
 //        return "login";
 //    }
 
+    /**
+     * here wanted to keep the url 'login', then it will go to spring default page.
+     * for that reason login_lte has been used.
+     * @return
+     */
     @GetMapping("/login_lte")
     public String loginFormLTE() {
         return "login_lte";
     }
+
 
     @PostMapping("/login")
     public String postLogin(
@@ -81,28 +87,4 @@ public class AuthController {
     }
 
 
-
-    // handler method to handle register user form submit request
-//    @PostMapping("/register/save")
-//    public String registration(@Valid @ModelAttribute("user") UserDto user,
-//                               BindingResult result,
-//                               Model model){
-//        User existing = userService.findByEmail(user.getEmail());
-//        if (existing != null) {
-//            result.rejectValue("email", null, "There is already an account registered with that email");
-//        }
-//        if (result.hasErrors()) {
-//            model.addAttribute("user", user);
-//            return "register";
-//        }
-//        userService.saveUser(user);
-//        return "redirect:/register?success";
-//    }
-
-    @GetMapping("/users")
-    public String listRegisteredUsers(Model model){
-        List<UserDto> users = userService.findAllUsers();
-        model.addAttribute("users", users);
-        return "users";
-    }
 }
