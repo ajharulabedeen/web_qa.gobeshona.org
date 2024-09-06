@@ -62,7 +62,7 @@ public class RegisterationController {
             restTemplate.postForEntity(signupApiUrl, signupReq, String.class);
 
             // If successful, redirect to the home page or another success page
-            return "redirect:/";
+            return "redirect:/login_lte";
         } catch (Exception e) {
             e.printStackTrace();
             // Handle errors from the API call

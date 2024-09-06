@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html layout:decorate="~{qa_shared_content/qa_layout}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org">
@@ -40,7 +39,7 @@
 </head>
 <body>
 
-<div class="container content-container " layout:fragment="content">
+<div class="container content-container" layout:fragment="content">
   <div class="form-container">
     <h2 class="text-center">iQA Signup</h2>
     <form th:action="@{/public/signup}" th:object="${signupReq}" method="post" id="signupForm">
@@ -96,86 +95,84 @@
       </div>
       <button type="submit" class="btn btn-primary btn-block" id="submitButton" disabled>Sign Up</button>
     </form>
+
+    <!-- Move the script to the end of the body -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('signupForm');
+        const emailField = document.getElementById('email');
+        const mobileField = document.getElementById('mobile');
+        const usernameTypeRadios = document.querySelectorAll('input[name="usernameType"]');
+        const verificationMethodRadios = document.querySelectorAll('input[name="verificationMethod"]');
+        const submitButton = document.getElementById('submitButton');
+        const emailFeedback = document.getElementById('emailFeedback');
+        const mobileFeedback = document.getElementById('mobileFeedback');
+
+        function validateForm() {
+          let isValid = true;
+
+          const usernameType = document.querySelector('input[name="usernameType"]:checked');
+          const verificationMethod = document.querySelector('input[name="verificationMethod"]:checked');
+
+          // Validate based on usernameType
+          if (usernameType && usernameType.value === 'email') {
+            if (!emailField.value) {
+              isValid = false;
+              emailField.classList.add('is-invalid');
+              emailFeedback.style.display = 'block';
+            } else {
+              emailField.classList.remove('is-invalid');
+              emailFeedback.style.display = 'none';
+            }
+          } else if (usernameType && usernameType.value === 'mobile') {
+            if (!mobileField.value || !/^0\d{10}$/.test(mobileField.value)) {
+              isValid = false;
+              mobileField.classList.add('is-invalid');
+              mobileFeedback.style.display = 'block';
+            } else {
+              mobileField.classList.remove('is-invalid');
+              mobileFeedback.style.display = 'none';
+            }
+          }
+
+          // Validate based on verificationMethod
+          if (verificationMethod && verificationMethod.value === 'email') {
+            if (!emailField.value) {
+              isValid = false;
+              emailField.classList.add('is-invalid');
+              emailFeedback.style.display = 'block';
+            }
+          } else if (verificationMethod && verificationMethod.value === 'mobile') {
+            if (!mobileField.value || !/^0\d{10}$/.test(mobileField.value)) {
+              isValid = false;
+              mobileField.classList.add('is-invalid');
+              mobileFeedback.style.display = 'block';
+            }
+          }
+
+          submitButton.disabled = !isValid;
+        }
+
+        usernameTypeRadios.forEach(radio => {
+          radio.addEventListener('change', validateForm);
+        });
+
+        verificationMethodRadios.forEach(radio => {
+          radio.addEventListener('change', validateForm);
+        });
+
+        emailField.addEventListener('input', validateForm);
+        mobileField.addEventListener('input', validateForm);
+
+        form.addEventListener('submit', function(event) {
+          validateForm();
+          if (submitButton.disabled) {
+            event.preventDefault();
+          }
+        });
+      });
+    </script>
   </div>
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('signupForm');
-    const emailField = document.getElementById('email');
-    const mobileField = document.getElementById('mobile');
-    const usernameTypeRadios = document.querySelectorAll('input[name="usernameType"]');
-    const verificationMethodRadios = document.querySelectorAll('input[name="verificationMethod"]');
-    const submitButton = document.getElementById('submitButton');
-    const emailFeedback = document.getElementById('emailFeedback');
-    const mobileFeedback = document.getElementById('mobileFeedback');
-
-    function validateForm() {
-      let isValid = true;
-
-      const usernameType = document.querySelector('input[name="usernameType"]:checked');
-      const verificationMethod = document.querySelector('input[name="verificationMethod"]:checked');
-
-      // Validate based on usernameType
-      if (usernameType && usernameType.value === 'email') {
-        if (!emailField.value) {
-          isValid = false;
-          emailField.classList.add('is-invalid');
-          emailFeedback.style.display = 'block';
-        } else {
-          emailField.classList.remove('is-invalid');
-          emailFeedback.style.display = 'none';
-        }
-      } else if (usernameType && usernameType.value === 'mobile') {
-        if (!mobileField.value || !/^0\d{10}$/.test(mobileField.value)) {
-          isValid = false;
-          mobileField.classList.add('is-invalid');
-          mobileFeedback.style.display = 'block';
-        } else {
-          mobileField.classList.remove('is-invalid');
-          mobileFeedback.style.display = 'none';
-        }
-      }
-
-      // Validate based on verificationMethod
-      if (verificationMethod && verificationMethod.value === 'email') {
-        if (!emailField.value) {
-          isValid = false;
-          emailField.classList.add('is-invalid');
-          emailFeedback.style.display = 'block';
-        }
-      } else if (verificationMethod && verificationMethod.value === 'mobile') {
-        if (!mobileField.value || !/^0\d{10}$/.test(mobileField.value)) {
-          isValid = false;
-          mobileField.classList.add('is-invalid');
-          mobileFeedback.style.display = 'block';
-        }
-      }
-
-      submitButton.disabled = !isValid;
-    }
-
-    usernameTypeRadios.forEach(radio => {
-      radio.addEventListener('change', validateForm);
-    });
-
-    verificationMethodRadios.forEach(radio => {
-      radio.addEventListener('change', validateForm);
-    });
-
-    emailField.addEventListener('input', validateForm);
-    mobileField.addEventListener('input', validateForm);
-
-    form.addEventListener('submit', function(event) {
-      validateForm();
-      if (submitButton.disabled) {
-        event.preventDefault();
-      }
-    });
-  });
-
-</script>
-
-
 </body>
 </html>
