@@ -66,25 +66,7 @@ public class AuthController {
         model.addAttribute("user", user);
         return "register";
     }
-    @GetMapping("register/new")
-    public String showRegistrationForm_(Model model){
-        UserDto user = new UserDto();
-        model.addAttribute("user", user);
-        return "register_";
-    }
-    @GetMapping("public/newregister")
-    public String showPublicRegistration(Model model){
-        UserDto user = new UserDto();
-        model.addAttribute("user", user);
-        return "register_public";
-    }
 
-    @GetMapping("register/singup_me")
-    public String singUp(Model model){
-        SignupReq user = new SignupReq();
-        model.addAttribute("signupRequest", user);
-        return "signup";
-    }
 
 
 }

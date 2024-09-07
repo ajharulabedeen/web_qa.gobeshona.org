@@ -34,6 +34,12 @@ public class RegisterationController {
         return "signup";
     }
 
+    @GetMapping("/forget-password")
+    public String showSignupForm2(Model model) {
+        model.addAttribute("signupReq", new SignupReq());
+        return "forgot_password";
+    }
+
     @PostMapping("/signup")
     public String submitSignupForm(@Valid SignupReq signupReq, BindingResult result, Model model) {
         if (result.hasErrors()) {
