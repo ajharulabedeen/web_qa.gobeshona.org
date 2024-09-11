@@ -44,7 +44,7 @@ public class PublicController {
     @PostMapping("/reset-password")
     public String resetPassword(@RequestParam("username") String username, Model model) {
 
-        String url = baseUrl + "/reset-password"; // Endpoint URL for the API call
+        String url = baseUrl + "/api/auth/reset-password"; // Endpoint URL for the API call
 
         // Prepare request parameters
         MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
@@ -66,7 +66,7 @@ public class PublicController {
 
 
         // Redirect back to the login page with appropriate messages
-        return "login"; // Redirect to the login page or any other page as per your flow
+        return "login_lte"; // Redirect to the login page or any other page as per your flow
     }
 
 
