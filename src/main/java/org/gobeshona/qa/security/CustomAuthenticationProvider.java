@@ -1,5 +1,7 @@
 package org.gobeshona.qa.security;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -15,6 +17,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.util.Map;
 
@@ -26,6 +30,10 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     @Autowired
     private RestTemplate restTemplate;
+
+    @Autowired
+    private HttpServletRequest request; // Inject HttpServletRequest
+
 
     @Autowired
     PasswordEncoder passwordEncoder;
@@ -44,6 +52,13 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
                 // Verify received credentials
                 String receivedUsername = response.get("username").toString();
                 String receivedPassword = response.get("password").toString();
+
+//                Get the session from the request and set the accessToken
+                HttpServletRequest currentRequest = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+                HttpSession session = currentRequest.getSession();
+
+                session.setAttribute("accessToken", response.get("accessToken").toString());
+
 
                 if (username.equals(receivedUsername) && passwordEncoder.matches(password, receivedPassword)) {
                     UserDetails userDetails = User.withUsername(receivedUsername)

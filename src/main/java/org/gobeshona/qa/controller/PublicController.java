@@ -62,6 +62,8 @@ public class PublicController {
             }
         } catch (RestClientException e) {
             model.addAttribute("error", "An error occurred while resetting the password: " + e.getMessage());
+        }catch (Exception e){
+            e.printStackTrace();
         }
 
 
